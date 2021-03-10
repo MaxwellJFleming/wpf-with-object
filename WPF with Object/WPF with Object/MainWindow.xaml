@@ -7,8 +7,45 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <TextBlock FontSize="30" Text="Name:"/>
+            <TextBlock FontSize="23" Margin="0 0 0 10"/>
+            <TextBlock FontSize="30" Text="Species:"/>
+            <TextBlock FontSize="23" Margin="0 0 0 10"/>
+            <TextBlock FontSize="30" Text="Rank:"/>
+            <TextBlock FontSize="23" Margin="0 0 0 10"/>
+            <TextBlock FontSize="30" Text="Lightsaber Color:"/>
+            <TextBlock FontSize="23" Margin="0 0 0 10"/>
+            <TextBlock FontSize="30" Text="Side of the Force:"/>
         </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <TextBlock x:Name="tbName" FontSize="30" Text="{Binding Name}"/>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBox x:Name="boxName" FontSize="20" Width="362"/>
+                <Button x:Name="bName" FontSize="20" Content="Submit new name" Click="bName_Click" Width="189"/>
+            </StackPanel>
+            <TextBlock x:Name="tbSpecies" FontSize="30" Text="{Binding Species}"/>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBox x:Name="boxSpecies" FontSize="20" Width="362"/>
+                <Button x:Name="bSpecies" FontSize="20" Content="Submit new species" Click="bSpecies_Click" Width="187"/>
+            </StackPanel>
+            <TextBlock x:Name="tbRankName" FontSize="30" Text="{Binding RankName}"/>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <Button x:Name="bAddRank" FontSize="20" Content="Rank Up" Click="bAddRank_Click" Width="287"/>
+                <Button x:Name="bDecreaseRank" FontSize="20" Content="Demote" Click="bDecreaseRank_Click" Width="262"/>
+            </StackPanel>
+            <TextBlock x:Name="tbLightsaberColor" FontSize="30" Text="{Binding LightsaberColor}"/>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBox x:Name="boxColor" FontSize="20" Width="362"/>
+                <Button x:Name="bColor" FontSize="20" Content="Submit new color" Click="bColor_Click" Width="187"/>
+            </StackPanel>
+            <TextBlock x:Name="tbSideName" FontSize="30" Text="{Binding SideName}"/>
+            <Button x:Name="bChangeSides" FontSize="20" Content="Change Sides" Click="bChangeSides_Click"/>
+        </StackPanel>
+
     </Grid>
 </Window>
